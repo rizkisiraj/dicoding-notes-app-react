@@ -23,7 +23,7 @@ class NotesForm extends React.Component {
     }
 
     onTitleHandler = (e) => {
-        if(this.state.length === 0 || e.target.value.length >= 50) {
+        if(this.state.length === -1 || e.target.value.length >= 51) {
             swal("Input tidak boleh lebih dari 50")
             .then((value) => {
               this.setState(prevState => {
@@ -68,7 +68,7 @@ class NotesForm extends React.Component {
         const addNotes = this.props.addNotes;
         return (
             
-            <form className="note-input" onSubmit={(e) => {
+            <form className="note-input my-0 mx-auto max-w-lg mb-12" onSubmit={(e) => {
                 e.preventDefault();
                 if(this.state.title === '' || this.state.text === '') {
                     swal("Inputan tidak boleh lebih kosong")
@@ -83,12 +83,12 @@ class NotesForm extends React.Component {
                   }
                 })
               }}>
-                <h2>Buat Catatan</h2>
-                <span className="note-input__title__char-limit">{`Sisa Karakter: ${this.state.length}`}</span>
-                <input autocomplete="off" placeholder="Judul" className="note-input__title" value={this.state.title} id='titleInput' onChange={this.onTitleHandler}></input>
-                <textarea placeholder="Isi Catatan" className="note-input__body" value={this.state.text} onChange={this.onTextHandler}>
+                <h2 className="text-blue-500 my-4 mx-0 text-3xl">Buat Catatan</h2>
+                <span className="block text-sm text-right text-blue-500">{`Sisa Karakter: ${this.state.length}`}</span>
+                <input autoComplete="off" placeholder="Judul" className="w-full block p-3 my-3 mx-0 text-blue-500 border-2 border-blue-500 outline-none focus:border-blue-700 rounded-md bg-white placeholder-blue-500" value={this.state.title} id='titleInput' onChange={this.onTitleHandler}></input>
+                <textarea placeholder="Isi Catatan" className="w-full block p-3 my-3 mx-0 text-blue-500 border-2 border-blue-500 outline-none focus:border-blue-700 rounded-md bg-white placeholder-blue-500 min-h-[175px]" value={this.state.text} onChange={this.onTextHandler}>
                 </textarea>
-                <button type="submit">Tambah</button>
+                <button className="block w-full p-2 bg-blue-500 text-white rounded-md cursor-pointerr" type="submit">Tambah</button>
               </form>
         )
     }

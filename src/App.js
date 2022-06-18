@@ -3,7 +3,7 @@ import { getInitialData } from './data'
 import NotesForm from "./components/notesForm";
 import Header from "./components/header";
 import NotesList from "./components/notesList";
-import './App.css'
+// import './App.css'
 
 import { Fragment } from "react";
 
@@ -86,7 +86,7 @@ class App extends React.Component {
     return (
       <>
       <Header searchField={this.state.searchField} id='searchInput' onSearchHandler={this.onSearchInput}/>
-      <main className="note-app__body">
+      <main className="max-w-5xl my-4 mx-auto p-3">
       <NotesForm addNotes={this.addNotes} />
       <NotesList onDeleteHandler={this.onDeleteHandler} onArchivedHandler={this.onArchivedHandler} datas={this.state.data} searchField={this.state.searchField} /> 
       </main>
