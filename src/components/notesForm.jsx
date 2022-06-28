@@ -24,16 +24,7 @@ class NotesForm extends React.Component {
 
     onTitleHandler = (e) => {
         if(this.state.length === -1 || e.target.value.length >= 51) {
-            swal("Input tidak boleh lebih dari 50")
-            .then((value) => {
-              this.setState(prevState => {
-                return {
-                    ...prevState,
-                    title: '',
-                    length: 50
-                }
-              });
-            })
+            swal("Input tidak boleh lebih dari 50");
             return;
         }
         const textInput = e.target.value;

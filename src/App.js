@@ -3,6 +3,7 @@ import { getInitialData } from './data'
 import NotesForm from "./components/notesForm";
 import Header from "./components/header";
 import NotesList from "./components/notesList";
+
 // import './App.css'
 
 import { Fragment } from "react";
